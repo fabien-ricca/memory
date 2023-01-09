@@ -3,24 +3,209 @@ html, body{
     padding: 0;
 }
 
-body{
+.wall1{
     background-image: url(images/wall/wall_index.jpg);
     background-size: cover;
     background-attachment: fixed;
-    min-width: 100vw;
-    min-height: 100vh;
+}
+
+.wall2{
+    background-image: url(images/wall/wall_score.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.wall3{
+    background-image: url(images/wall/wall_game.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body, main{
+    max-width: 100vw;
+    min-height: 90vh;
+}
+
+h1{
+    font-family: 'Cormorant', serif;
+    font-size: 8em;
+    margin-left: 1.5em;
+    color: white;
+}
+
+h2{
+    font-family: 'Cormorant', serif;
+    font-size: 3em;
+    margin-left: 0.5em;
+    color: white;
+}
+
+h3{
+    font-family: 'Cormorant', serif;
+    font-size: 2em;
+    margin-left: 0.5em;
+}
+
+a{
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+}
+
+p, input, label{
+    font-family: 'Signika', sans-serif;
+    margin: 0;
 }
 
 .flex{
     display: flex;
+    flex-wrap: wrap;
 }
 
-main{
-    flex-grow: 1;
+.flex-column{
+    display: flex;
+    flex-direction: column;
 }
 
-#link-jouer{
+.container{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+
+
+/******************************************************************* HEADER *******************************************************************/
+
+header{
+    width: auto;
+    height: 3em;
+}
+
+nav{
+    height: auto;
+    justify-content: start;
     align-items: center;
 }
 
+nav a{
+    padding: 0.7em;
+    font-size: 1.5em;
+    color: black;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+/******************************************************************* INDEX *******************************************************************/
+
+#link-jouer{
+    margin-top: 20em;
+}
+#link-jouer a{
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: 3em;
+    border: 3px solid black;
+    border-radius: 15px;
+    color: white;
+    background-color: orange;
+    transition: 0.5s;
+}
+
+#link-jouer a:hover{
+    color: white;
+    background-color: rgb(246, 221, 2);
+    transform: scale(1.8);
+    transition: 0.3s;
+}
+
+
+/******************************************************************* INSCRIPTION *******************************************************************/
+.form{
+    width: fit-content;
+    padding: 2em;
+    border-radius: 15px;
+    border: 2px solid black;
+    backdrop-filter: blur(10px);
+    font-size: 1.5em;
+}
+
+.form label{
+    text-align: center;
+}
+
+.form input{
+    text-align: center;
+    margin-top: 0.3em;
+    margin-bottom: 0.8em;
+}
+
+#mybutton{
+    margin-top: 1em;
+    align-self: center;
+    width: fit-content;
+    font-size: 0.8em;
+    cursor: pointer;
+    background-color: orange;
+    transition: 0.5s;
+}
+
+
+#mybutton:hover{
+    background-color: rgb(246, 221, 2);
+    transition: 0.3s;
+}
+
+#msgerror{
+    text-align: center;
+    font-size: 0.5em;
+    color: red;
+}
+
+
+/******************************************************************* PROFIL *******************************************************************/
+#form-update{
+    margin-left: 2em;
+    width: 30vw;
+}
+
+#form-update label{
+    font-size: 1.5em;
+    margin-bottom: .05em;
+}
+
+#form-update input{
+    max-width: 35%;
+    margin-bottom: 1em;
+}
+
+#mybutton-update{
+    width: fit-content;
+
+}
+
+
+/******************************************************************* PROFIL *******************************************************************/
+.card-button{
+    margin: 3em;
+    padding: 0;
+    height: 20.3em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card-button img{
+    width: 10em;
+    height: 20em;
+}
+
+.card-button:hover{
+    transform: scale(1.02);
+    transition: 0.3s;
+}

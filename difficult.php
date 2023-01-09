@@ -1,4 +1,12 @@
-<?php include 'include/User.php' ?>
+<?php include 'include/User.php';
+
+$cardList=['img1.jpg', 'img2.png', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg'];
+    
+shuffle($cardList);
+var_dump($cardList);
+
+    
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,19 +16,16 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=Rubik&family=Signika&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>Accueil</title>
+        <title>Memory</title>
     </head>
 
-    <body class="wall1">
+    <body class="wall3">
         <?php include 'include/header.php' ?>
+
         <main class="flex">
-            
-            <h1>Memory</h1>
-            <?php if ($user->isConnected()){ ?>
-                <div id="link-jouer">
-                    <a href="difficult.php">Jouer</a>
-                </div>
-            <?php } ?>
+            <div id="link-jouer">
+                <a href="jeu.php">Facile</a>
+            </div>
         </main>
 
         <footer></footer>
