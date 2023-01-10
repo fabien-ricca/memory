@@ -3,7 +3,7 @@
     include 'include/Card.php';
     session_start(); 
 
-    $card = new Card($index = NULL, $idCard = NULL);
+    $card = new Card($index = NULL, $idCard = NULL, $state = false);
     $card->difficulty();
     var_dump($_SESSION['cards']);
     header('location: jeu.php');
