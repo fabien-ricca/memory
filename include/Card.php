@@ -11,6 +11,13 @@
             $this->index = $index;
             $this->idCard = $idCard;
             $this->state = $state;
+            
+            if($this->state == false){
+                $this->display = "<img src='images/card/back-card.png'>";
+            }
+            if($this->state == true){
+                $this->display = "<img src='images/card/img".$this->idCard.".jpg'>";
+            }
 
             
         }
@@ -27,7 +34,7 @@
                 }
 
                 //shuffle($cardListe);                                  // On mélange la liste d'objets
-                $_SESSION['cards'] = $cardListe;                        // On initie un compteur pour limiter le nombre de cartes retournées à 2 //TODOO N'en garder qu'un seul en calculant le modulo.
+                $_SESSION['cards'] = $cardListe;                        // On initie un compteur pour limiter le nombre de cartes retournées à 2 
                 $_SESSION['countTry'] = 0;
         }
 

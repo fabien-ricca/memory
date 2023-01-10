@@ -5,7 +5,7 @@
     
 
     $cartes = $_SESSION['cards'];
-     //var_dump($cartes);
+     var_dump($cartes);
      
     
 
