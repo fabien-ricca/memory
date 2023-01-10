@@ -1,8 +1,4 @@
-<?php 
-    session_start();    // On ouvre la session
-
-
-    
+<?php  // On ouvre la session
     class User {
 
         // ATTRIBUTS
@@ -88,7 +84,9 @@
 
         // METHODE POUR DECONNEXION
         public function disConnect(){
+            session_unset();
             session_destroy();                  // On détruit la session en cours
+            var_dump($_SESSION);
             header("location: index.php");  // On redirige vers la page de connexion
         }
 
@@ -173,31 +171,6 @@
         // METHODE POUR RECUPERER LE LOGIN
         public function getLogin(){
             return $_SESSION['login'];
-        }
-    }
-
-    class Card {
-        private $id;
-        private $back;
-        private $front;
-
-        public function __construct($id, $front, $back){
-            $this->$id = $id;
-            $this->$front = $front;
-            $this->$back = $back;
-
-        }
-
-        public function getId(){
-            return $this->id;
-        }
-
-        public function getFront(){
-            return $this->front;
-        }
-
-        public function getBack(){
-            return $this->back;
         }
     }
 

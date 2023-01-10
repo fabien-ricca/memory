@@ -1,10 +1,13 @@
-<?php include 'include/User.php';
+<?php 
+    include 'include/User.php';
+    include 'include/Card.php';
+    session_start(); 
 
-$cardList=['img1.jpg', 'img2.png', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg'];
+    $card = new Card($index = NULL, $idCard = NULL);
+    $card->difficulty();
+    var_dump($_SESSION['cards']);
+    header('location: jeu.php');
     
-shuffle($cardList);
-var_dump($cardList);
-
     
 ?>
 
@@ -22,9 +25,13 @@ var_dump($cardList);
     <body class="wall3">
         <?php include 'include/header.php' ?>
 
-        <main class="flex">
-            <div id="link-jouer">
-                <a href="jeu.php">Facile</a>
+        <main>
+            <div  class="flex-column" id="difficult-container">
+                <form method="post" class="flex-column">
+                    <input type="submit" name="facile" value="Facile" id="difficult"><br>
+                    <input type="submit" name="intermediaire" value="Intermédiaire" id="difficult"><br>
+                    <input type="submit" name="difficile" value="Dificile" id="difficult"><br>
+                </form>
             </div>
         </main>
 

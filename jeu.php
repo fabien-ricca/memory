@@ -1,12 +1,30 @@
-<?php include 'include/User.php';
-
+<?php 
+    include 'include/User.php';
+    include 'include/Card.php';
+    session_start(); 
     
 
-    if(isset($_POST['card'])){
-        $count++;
-        echo $count;
-    }
-    
+    $cartes = $_SESSION['cards'];
+     var_dump($cartes);
+     var_dump($_POST);
+
+
+     if(isset($_POST['card'])){
+        $index = $_POST['card'];
+        $idcard = $cartes[$index]->getIdcard();
+
+        $verifIndex = 
+        echo $index;
+        echo $idcard;
+
+        if($index = )
+
+        $cartes[$idcard]->setState(true);
+        $_SESSION['idcard'] = $_POST['card'];
+        
+
+        //var_dump($_SESSION['idcard']);
+     }
 ?>
 
 <!DOCTYPE html>
@@ -26,29 +44,21 @@
         <main class="flex">
             <form id="form-card" method="post"></form>
 
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
+            <button form="form-card" name="card" class="card-button" value="<?= $cartes['0']->getIndex(); ?>"><?= $cartes['0']->getDisplay(); ?></button>
+
+            <button form="form-card" name="card" class="card-button" value="<?= $cartes['1']->getIndex(); ?>"><?= $cartes['1']->getDisplay(); ?></button>
+
+            <button form="form-card" name="card" class="card-button" value="<?= $cartes['2']->getIndex(); ?>"><?= $cartes['2']->getDisplay(); ?></button>
+
+            <button form="form-card" name="card" class="card-button" value="<?= $cartes['0']->getIndex(); ?>"><?= $cartes['0']->getDisplay(); ?></button>
+
+            <button form="form-card" name="card" class="card-button" value="<?= $cartes['1']->getIndex(); ?>"><?= $cartes['1']->getDisplay(); ?></button>
+
+            <button form="form-card" name="card" class="card-button" value="<?= $cartes['2']->getIndex(); ?>"><?= $cartes['2']->getDisplay(); ?></button>
+        
+                
             
-            <!-- <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
             
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button>
-            
-            <button form="form-card" name="card" class="card-button"><img src="images/card/back-card.png" alt=""></button> -->
         </main>
 
         <footer></footer>

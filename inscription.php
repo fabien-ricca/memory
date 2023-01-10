@@ -1,4 +1,6 @@
-<?php include 'include/User.php';
+<?php 
+    include 'include/User.php';
+    session_start(); 
     
     $msg ="";
 
