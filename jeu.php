@@ -5,35 +5,60 @@
     
 
     $cartes = $_SESSION['cards'];
-     var_dump($cartes);
+     //var_dump($cartes);
      
-    
 
     
     if(isset($_POST['card'])){                          // Quand une carte est cliquée
+        $_SESSION['countTry']++;                            // On incrémente le compeur (pour limiter le nombre de cartes retourées)
         $index = $_POST['card'];                            // On récupère l'index renvoyé par la carte 
         $idcard = $cartes[$index]->getIdcard();             // On récupère l'idcard associé à l'index
+        $cartes[$index]->setState(true);                    // On passe l'état de la carte sur true (face)
         echo "Index : " . $index."<br>";
         echo "idCard : " . $idcard."<br>";
-         
-        $cartes[$index]->setState(true);                    // On passe l'état de la carte sur true (face)
-        $_SESSION['idcard'] = $_POST['card'];
-        $_SESSION['countTry']++;                            // On incrémente le compeur (pour limiter le nombre de cartes retourées)
 
-        if($_SESSION['countTry'] > 2){                          // Si le compteur atteind 2
-            $_SESSION['countTry'] = 0;                              // On le remet à zéro
+        if($_SESSION['countTry'] < 2){                  // On stocke l'index et l'idcard de la première carte retournée, pour la comparer à la seconde
+            $_SESSION['idcard'] = $idcard;
+            $_SESSION['index'] = $index;
+        }
+        var_dump($_SESSION['idcard']);
+        var_dump($_SESSION['index']);
 
-            for($i=0; $i<=5; $i++){                                 // on remet les états de toutes les cartes sur false (recto) //TODOO: Ne retourner que les deux cartes.
-                $cartes[$i]->setState(false);
+        if($_SESSION['countTry'] == 2){                 // Quand 2 cartes sont retournées, on compare leurs index et leur idcard
+            if($index != $_SESSION['index'] && $idcard == $_SESSION['idcard']){     // Si elles sont identiques c'est gagné, on les laisse sur true
+                echo "Paire trouvée !" . '<br>';
+                $_SESSION['pairs'][]= $index;
+                $_SESSION['pairs'][]= $_SESSION['index'];
                 
             }
         }
-        echo $_SESSION['countTry'];
+        
 
+        if($_SESSION['countTry'] > 2){                          // Si le compteur atteind 2
+            $_SESSION['countTry'] = 0;   
+            for($i=0; $i<=5; $i++){
+                echo "<br>";
+                
+                foreach($_SESSION['pairs'] as $pair){
+                    if($i == $pair){
+                        $cartes[$i]->setState(false);
+                    }
+                }
+            }
+
+            
+
+            
+
+        }
+        echo "Cartes retournées : ".$_SESSION['countTry']."<br>";
+        var_dump($_SESSION['pairs']);
 
         
         
-
+            
+        
+        //var_dump($_SESSION['pairs']);
         //var_dump($_SESSION['idcard']);
      }
 
