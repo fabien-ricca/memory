@@ -12,12 +12,7 @@
             $this->idCard = $idCard;
             $this->state = $state;
             
-            if($this->state == false){
-                $this->display = "<img src='images/card/back-card.png'>";
-            }
-            if($this->state == true){
-                $this->display = "<img src='images/card/img".$this->idCard.".jpg'>";
-            }
+            
 
             
         }
@@ -62,6 +57,12 @@
         }
 
         public function getDisplay(){
+            if($this->state == false){
+                $this->display = "<img src='images/card/back-card.png'>";
+            }
+            if($this->state == true){
+                $this->display = "<img src='images/card/img".$this->idCard.".jpg'>";
+            }
             return $this->display;
         }
     }
