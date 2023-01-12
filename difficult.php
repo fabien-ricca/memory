@@ -3,11 +3,33 @@
     include 'include/Card.php';
     session_start(); 
 
-    $card = new Card($index = NULL, $idCard = NULL, $state = false);
-    $card->difficulty();
-    var_dump($_SESSION['cards']);
-    header('location: jeu.php');
     
+    $nbrcards = 0;
+
+
+    if(isset($_POST['facile'])){
+        $nbrcards = 6;
+        echo $nbrcards;
+        $card = new Card($index = NULL, $idCard = NULL, $state = false);
+        $card->difficulty($nbrcards);
+        header('location: jeu.php');
+    }
+
+    if(isset($_POST['intermediaire'])){
+        $nbrcards = 12;
+        echo $nbrcards;
+        $card = new Card($index = NULL, $idCard = NULL, $state = false);
+        $card->difficulty($nbrcards);
+        header('location: jeu.php');
+    }
+
+    if(isset($_POST['difficile'])){
+        $nbrcards = 24;
+        echo $nbrcards;
+        $card = new Card($index = NULL, $idCard = NULL, $state = false);
+        $card->difficulty($nbrcards);
+        header('location: jeu.php');
+    }
     
 ?>
 
@@ -28,9 +50,9 @@
         <main>
             <div  class="flex-column" id="difficult-container">
                 <form method="post" class="flex-column">
-                    <input type="submit" name="facile" value="Facile" id="difficult"><br>
-                    <input type="submit" name="intermediaire" value="Intermédiaire" id="difficult"><br>
-                    <input type="submit" name="difficile" value="Dificile" id="difficult"><br>
+                    <input type="submit" name="facile" value="facile" id="difficult"><br>
+                    <input type="submit" name="intermediaire" value="intermediaire" id="difficult"><br>
+                    <input type="submit" name="difficile" value="difficile" id="difficult"><br>
                 </form>
             </div>
         </main>
