@@ -8,7 +8,7 @@
     
     $cartes = $_SESSION['cards'];
     //var_dump($cartes);
-    var_dump($_SESSION['pairs']);
+    //var_dump($_SESSION['pairs']);
     
     
     
@@ -48,10 +48,10 @@
             $_SESSION['index'] = $index;
         }*/
         
-        echo "Index : " . $index."<br>";
+        /*echo "Index : " . $index."<br>";
         $a = var_dump($_SESSION['index']);
         echo "idCard : " . $idcard."<br>";
-        $b = var_dump($_SESSION['idcard']);
+        $b = var_dump($_SESSION['idcard']);*/
         
         
         
@@ -69,14 +69,12 @@
                         
                         $intIndex = (int)$carte->getIndex();
                         
-                        if($intIndex != $pair){
-                            echo $carte->getIndex() .' mon state est ' . ($carte->getState() ? 'true' : 'false') .'<br>';
-                            $carte->setState(false);
+                        if(in_array($intIndex, $_SESSION['pairs'])){
+                            $carte->setState(true);
                         }
                         
                         else{
-                            echo $carte->getIndex() .' mon state est ' . ($carte->getState() ? 'true' : 'false') .'<br>';
-                            $carte->setState(true);
+                            $carte->setState(false);
                         }
                     }
                 }
@@ -90,19 +88,13 @@
         }
         
         echo "<br>Cartes retournées : ".$_SESSION['countTry']."<br>";
-        //var_dump($cartes);
         
         if(count($_SESSION['pairs']) == 6){
             header('location: win.php');
-            
-            
         }
-        //echo "ok";
-        //sleep(5);
-        //var_dump($_SESSION['idcard']);
     }
     
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     ?>
 
 <!DOCTYPE html>
