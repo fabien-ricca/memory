@@ -6,8 +6,6 @@
     
     $cards = $_SESSION['board'];
     
-    $win = false;
-    
     /*if(isset($_POST['card'])){
         $_SESSION['score']++;                           // On incrémente le score
         $_SESSION['countTry']++;                        // On incrémente le compeur (pour limiter le nombre de cartes retourées)
@@ -87,7 +85,7 @@
 
         $card = new Card($index = NULL, $idCard = NULL, $state = false);
         if($board->win()){
-            $win = true;
+            header('location: win.php');
         }
     }
 
@@ -108,17 +106,13 @@
         <?php include 'include/header.php' ?>
 
         <main class="flex">
-            <form id="form-card" method="post"></form>
+            <section class="flex" id="card-container">
+                <form id="form-card" method="post"></form>
 
                 <?php for($i=0; isset($cards[$i]); $i++){ ?>
                     <button form="form-card" name="card" class="card-button" value="<?= $cards[$i]->getIndex(); ?>"><?= $cards[$i]->getDisplay(); ?></button>
                 <?php }?>
-
-                <?php if($win){echo "<br>C'est gagné !! Votre score : ".$_SESSION['score'];} ?>
-        
-                
-            
-            
+            </section>
         </main>
 
         <footer></footer>

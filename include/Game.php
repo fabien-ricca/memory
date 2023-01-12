@@ -7,7 +7,6 @@
         public $difficult;
 
         public function __construct(){
-
         }
 
         public function firstCard($post){

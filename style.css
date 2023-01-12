@@ -16,9 +16,9 @@ html, body{
 }
 
 .wall3{
-    /*background-image: url(images/wall/wall_game.jpg);
+    background-image: url(images/wall/wall_game.jpg);
     background-size: cover;
-    background-attachment: fixed;*/
+    background-attachment: fixed;
 }
 
 body, main{
@@ -198,8 +198,25 @@ nav a:hover{
     align-items: center;
 }
 
-#difficult{
+#facile{
+    margin-bottom: 1em;
     background-color: orange;
+    cursor: pointer;
+    font-size: 2.5em;
+    transition: 0.5s;
+}
+
+#inter{
+    margin-bottom: 1em;
+    background-color: rgb(255, 115, 0);
+    cursor: pointer;
+    font-size: 2.5em;
+    transition: 0.5s;
+}
+
+#diff{
+    margin-bottom: 1em;
+    background-color: rgb(119, 10, 10);
     cursor: pointer;
     font-size: 2.5em;
     transition: 0.5s;
@@ -212,8 +229,15 @@ nav a:hover{
 
 
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! JEU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#card-container{
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 .card-button{
-    margin: 3em;
+    margin-left: 4em;
+    margin-right: 4em;
     padding: 0;
     height: 20.3em;
     background-color: transparent;

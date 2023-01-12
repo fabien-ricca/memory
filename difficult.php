@@ -50,9 +50,9 @@
         <main>
             <div  class="flex-column" id="difficult-container">
                 <form method="post" class="flex-column">
-                    <input type="submit" name="facile" value="facile" id="difficult"><br>
-                    <input type="submit" name="intermediaire" value="intermediaire" id="difficult"><br>
-                    <input type="submit" name="difficile" value="difficile" id="difficult"><br>
+                    <input type="submit" name="facile" value="facile" id="facile"><br>
+                    <input type="submit" name="intermediaire" value="intermediaire" id="inter"><br>
+                    <input type="submit" name="difficile" value="difficile" id="diff"><br>
                 </form>
             </div>
         </main>

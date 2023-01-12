@@ -24,7 +24,7 @@
                 $i--;
             }
 
-            //shuffle($cardListe);                                    // On mélange la liste d'objets
+            shuffle($cardListe);                                    // On mélange la liste d'objets
             $_SESSION['board'] = $cardListe;                      
             $_SESSION['countTry'] = 0;                              // On initie un compteur pour limiter le nombre de cartes retournées à 2 
             $_SESSION['score'] = 0;                                 // On initie le compteur du score
