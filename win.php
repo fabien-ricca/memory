@@ -5,9 +5,7 @@
     include 'include/Score.php';
     session_start(); 
 
-
     $score = new Score();
-
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +28,7 @@
                 <h3>Nombre de coups</h3>
                 <p><?= $_SESSION['nbrcoups'] ?></p>
                 <h3>Votre score</h3>
+
                 <p><?php 
                     $score->calculScore($_SESSION['difficult'], $_SESSION['nbrcoups']);
                     echo $score->getUserScore(); 
@@ -38,10 +37,6 @@
 
                 <a href="difficult.php"><button id="replay">Rejouer</button></a>
             </section>
-
         </main>
-
-        <footer></footer>
     </body>
-
 </html>

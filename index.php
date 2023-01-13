@@ -25,8 +25,5 @@
                 </div>
             <?php } ?>
         </main>
-
-        <footer></footer>
     </body>
-
 </html>

@@ -2,10 +2,8 @@
     include 'include/User.php';
     include 'include/Card.php';
     session_start(); 
-
     
     $nbrcards = 0;
-
 
     if(isset($_POST['facile'])){
         $_SESSION['difficult'] = 6;
@@ -27,7 +25,6 @@
         $card->difficulty($_SESSION['difficult']);
         header('location: jeu.php');
     }
-    
 ?>
 
 <!DOCTYPE html>
@@ -53,8 +50,5 @@
                 </form>
             </div>
         </main>
-
-        <footer></footer>
     </body>
-
 </html>

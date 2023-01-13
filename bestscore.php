@@ -4,19 +4,6 @@
     include 'include/Game.php';
     include 'include/Score.php';
     session_start(); 
-
-    $msgError = "";         //Création de la variable qui contiendra le message d'erreur du mdp
-
-    if ($_POST != NULL){
-        $login=htmlspecialchars($_POST['login']);
-        $newPassword=htmlspecialchars($_POST['password']);  
-        $confNewPassword=htmlspecialchars($_POST['confpassword']); 
-        $oldPassword=htmlspecialchars($_POST['oldpassword']);  
-
-        $user->update($login, $oldPassword, $newPassword, $confNewPassword);
-    }
-
-    //echo $user->getOtherLogin(3);
 ?>
 
 <!DOCTYPE html>
@@ -34,42 +21,36 @@
         <?php include 'include/header.php' ?>
 
         <main class="flex-column">
-                    <h2>Best Scores Ever</h2>
-                <section class="flex center" id="scorecontainer">
-                    <table id="bestscore">
-                        <thead>
-                            <tr>
-                                <th>Class.</th>
-                                <th>Joueur</th>
-                                <th>Nb coups</th>
-                                <th>Score</th>
-                                <th>Difficulté</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                                <?php 
-                                    $score = new Score();
-                                    $data = $score->getBestScore();
-                                    //var_dump($data); $user->getOtherLogin(3);
-                                    for($i=0; isset($data[$i])>= 10; $i++){
-                                        //echo $data[$i]['difficult'].'<br>';?>
-                                        <tr>
-                                            <th><?= $i+1 ?></th>
-                                            <td><?= $user->getOtherLogin($data[$i]['iduser']) ?></td>
-                                            <td><?= $data[$i]['nbcoups'] ?></td>
-                                            <td><?= $data[$i]['score'] ?></td>
-                                            <td><?= $data[$i]['difficult'] ?></td>
-                                        </tr>
-                                <?php } ?>  
-                        </tbody>
-                    </table>
+            <h2>Best Scores Ever</h2>
+            <section class="flex center" id="scorecontainer">
+                <table id="bestscore">
+                    <thead>
+                        <tr>
+                            <th>Class.</th>
+                            <th>Joueur</th>
+                            <th>Nb coups</th>
+                            <th>Score</th>
+                            <th>Difficulté</th>
+                        </tr>
+                    </thead>
 
-
-                </section>
+                    <tbody>
+                            <?php 
+                                $score = new Score();
+                                $data = $score->getBestScore();
+                                for($i=0; isset($data[$i]); $i++){
+                                    if($i<10){?>
+                                    <tr>
+                                        <th><?= $i+1 ?></th>
+                                        <td><?= $user->getOtherLogin($data[$i]['iduser']) ?></td>
+                                        <td><?= $data[$i]['nbcoups'] ?></td>
+                                        <td><?= $data[$i]['score'] ?></td>
+                                        <td><?= $data[$i]['difficult'] ?></td>
+                                    </tr>
+                            <?php }} ?>  
+                    </tbody>
+                </table>
+            </section>
         </main>
-
-        <footer></footer>
     </body>
-
 </html>

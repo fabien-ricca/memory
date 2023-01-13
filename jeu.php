@@ -4,8 +4,7 @@
     include 'include/Game.php';
     session_start(); 
     
-    
-    $cards = $_SESSION['board'];
+    $cards = $_SESSION['board'];            // On stocke les cartes dans une variable pour les afficher
     
     if(isset($_POST['card'])){
         $post = $_POST['card'];
@@ -17,8 +16,7 @@
             header('location: win.php');
         }
     }
-
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -43,8 +41,5 @@
                 <?php }?>
             </section>
         </main>
-
-        <footer></footer>
     </body>
-
 </html>

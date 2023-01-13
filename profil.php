@@ -60,7 +60,6 @@
                         </table>
                 </section>
 
-
             <h3>Modifier vos informations</h3>
             <section>
                 <form action="" Method="POST" class="flex-column" id="form-update">
@@ -77,12 +76,8 @@
                     <input type="password" id="confpassword" name="confpassword"">
 
                     <input type="submit" id="mybutton-update" value="Modifier" ><br><br>
-
                 </form>
             </section>
         </main>
-
-        <footer></footer>
     </body>
-
 </html>
