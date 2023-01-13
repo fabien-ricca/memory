@@ -45,10 +45,10 @@
                     <input type="text" id="login" name="login" placeholder="Min. 5 caractères" require>
 
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" value="Bonjour@123" placeholder="Bonjour@123" require>
+                    <input type="password" id="password" name="password" value="" placeholder="" require>
 
                     <label for="confPassword">Confirmation</label>
-                    <input type="password" id="confPassword" name="confPassword" value="Bonjour@123" placeholder="Bonjour@123" require>
+                    <input type="password" id="confPassword" name="confPassword" value="" placeholder="" require>
 
                     <input type="submit" id="mybutton" value="Je m'inscris" >
                     

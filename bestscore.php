@@ -15,6 +15,8 @@
 
         $user->update($login, $oldPassword, $newPassword, $confNewPassword);
     }
+
+    //echo $user->getOtherLogin(3);
 ?>
 
 <!DOCTYPE html>
@@ -32,33 +34,36 @@
         <?php include 'include/header.php' ?>
 
         <main class="flex-column">
-            <h2>Best Scores Ever</h2>
-                <section class="flex center" id="bestscore">
-                    
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nb coups</th>
-                                    <th>Score</th>
-                                    <th>Difficulté</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                                    <?php 
-                                        $score = new Score();
-                                        $data = $score->getUserBestScore();
-                                        //var_dump($data); 
-                                        for($i=0; isset($data[$i])>= 10; $i++){
-                                            //echo $data[$i]['difficult'].'<br>';?>
-                                            <tr>
-                                                <td><?= $data[$i]['nbcoups'] ?></td>
-                                                <td><?= $data[$i]['score'] ?></td>
-                                                <td><?= $data[$i]['difficult'] ?></td>
-                                            </tr>
-                                    <?php } ?>  
-                            </tbody>
-                        </table>
+                    <h2>Best Scores Ever</h2>
+                <section class="flex center" id="scorecontainer">
+                    <table id="bestscore">
+                        <thead>
+                            <tr>
+                                <th>Class.</th>
+                                <th>Joueur</th>
+                                <th>Nb coups</th>
+                                <th>Score</th>
+                                <th>Difficulté</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                <?php 
+                                    $score = new Score();
+                                    $data = $score->getBestScore();
+                                    //var_dump($data); $user->getOtherLogin(3);
+                                    for($i=0; isset($data[$i])>= 10; $i++){
+                                        //echo $data[$i]['difficult'].'<br>';?>
+                                        <tr>
+                                            <th><?= $i+1 ?></th>
+                                            <td><?= $user->getOtherLogin($data[$i]['iduser']) ?></td>
+                                            <td><?= $data[$i]['nbcoups'] ?></td>
+                                            <td><?= $data[$i]['score'] ?></td>
+                                            <td><?= $data[$i]['difficult'] ?></td>
+                                        </tr>
+                                <?php } ?>  
+                        </tbody>
+                    </table>
 
 
                 </section>

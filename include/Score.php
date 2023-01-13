@@ -22,7 +22,7 @@
         }
 
         public function getBestScore(){
-            $request = $this->connect->prepare("SELECT nbcoups, score, difficult FROM score ORDER BY score DESC"); 
+            $request = $this->connect->prepare("SELECT iduser, nbcoups, score, difficult FROM score ORDER BY score DESC"); 
             $request->execute([]);
             $score = $request->fetchAll(PDO::FETCH_ASSOC);
             return $score;

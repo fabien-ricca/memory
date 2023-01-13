@@ -173,6 +173,13 @@
         public function getLogin(){
             return $_SESSION['login'];
         }
+
+        public function getOtherLogin($iduser){
+            $request = $this->connect->prepare("SELECT login FROM utilisateurs WHERE id = ?"); 
+            $request->execute([$iduser]);
+            $data = $request->fetch(PDO::FETCH_ASSOC);
+            return $data['login'];
+        }
     }
 
     $user = new User();         // On lance une nouvelle instance de classe

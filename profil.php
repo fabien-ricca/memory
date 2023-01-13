@@ -35,8 +35,7 @@
             <h2>Bienvenue sur votre profil, <?= $user->getLogin() ?></h2>
             <h3>Vos meilleurs scores</h3>
                 <section>
-                    
-                        <table>
+                        <table id="score">
                             <thead>
                                 <tr>
                                     <th>Nb coups</th>
@@ -45,7 +44,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
                                     <?php 
                                         $score = new Score();
                                         $data = $score->getUserBestScore();
@@ -60,8 +58,6 @@
                                     <?php } ?>  
                             </tbody>
                         </table>
-
-
                 </section>
 
 

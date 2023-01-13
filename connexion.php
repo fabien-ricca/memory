@@ -30,10 +30,10 @@
             <section class="container">
                 <form action="" Method="POST" class="flex-column form">
                     <label for="login">Nom d'utilisateur</label>
-                    <input type="text" id="login" name="login" placeholder="Padawan" value="Padawan" require>
+                    <input type="text" id="login" name="login" placeholder="" value="" require>
 
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" value="Bonjour@123" placeholder="Bonjour@123" require>
+                    <input type="password" id="password" name="password" value="" placeholder="" require>
 
                     <input type="submit" id="mybutton" value="Je me connecte" >
 

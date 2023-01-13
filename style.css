@@ -192,7 +192,25 @@ nav a:hover{
 }
 
 
+
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PROFIL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#score{
+    padding: 1em;
+    border: 3px solid black;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.129);
+}
+
+#score th{
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+#score tr{
+    padding: 0.2em;
+    font-size: 1.08em;
+}
+
 #form-update{
     margin-left: 2em;
     width: 30vw;
@@ -212,6 +230,7 @@ nav a:hover{
     width: fit-content;
 
 }
+
 
 
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! DIFFICULT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
@@ -306,4 +325,29 @@ nav a:hover{
     border-radius: 10px;
     background-color: orangered;
     cursor: pointer;
+}
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! BESTSCORE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#scorecontainer{
+    height: 60vh;
+    text-align: center;
+}
+
+#bestscore{
+    padding: 3em;
+    border: 3px solid black;
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+}
+
+#bestscore th{
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+#bestscore tr{
+    padding: 0.2em;
+    font-size: 1.08em;
 }
