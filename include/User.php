@@ -2,7 +2,7 @@
     class User {
 
         // ATTRIBUTS
-        private $connect;
+        protected $connect;
         private $id;
         public $login;
         public $password;
@@ -65,6 +65,7 @@
 
             if($count == 1){                         // Si le login existe (s'il correspond)
                 $data = $request->fetch(PDO::FETCH_ASSOC);
+                var_dump($data);
 
                 if (password_verify($password, $data['password'])){     // Si le mdp correspond
                     $_SESSION['id'] = $data['id'];

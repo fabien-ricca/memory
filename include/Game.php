@@ -53,25 +53,25 @@
                         }
                     }
                 else{                                               // Si aucune paire n'a été trouvé, on retourne toutes les cartes
-                    $diff = $_SESSION['difficulté']-1;
+                    $diff = $_SESSION['difficult']-1;
                     for($j=0; $j<=$diff; $j++){
                         $this->board[$j]->setState(false);
                     }
-                }
+                }   
             }
             $this->firstCard($post);
         }
 
 
         public function win(){
-            if(count($_SESSION['pairs']) == $_SESSION['difficulté']){
+            if(count($_SESSION['pairs']) == $_SESSION['difficult']){
                 return true;
             }
         }
 
 
         public function game($post){
-            $_SESSION['score']++;                           // On incrémente le score
+            $_SESSION['nbrcoups']++;                           // On incrémente le score
             $_SESSION['countTry']++;                        // On incrémente le compeur (pour limiter le nombre de cartes retourées)
             $this->board = $_SESSION['board'];
             

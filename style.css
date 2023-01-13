@@ -10,7 +10,7 @@ html, body{
 }
 
 .wall2{
-    background-image: url(images/wall/wall_score.jpg);
+    background-image: url(images/wall/wall_profil.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -21,9 +21,25 @@ html, body{
     background-attachment: fixed;
 }
 
+.wall4{
+    background-image: url(images/wall/wall_win.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.wall5{
+    background-image: url(images/wall/wall_score.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 body, main{
     max-width: 100vw;
     min-height: 90vh;
+}
+
+main{
+    padding-left: 0.5em;
 }
 
 h1{
@@ -36,17 +52,16 @@ h1{
 h2{
     font-family: 'Cormorant', serif;
     font-size: 3em;
-    margin-left: 0.5em;
     color: white;
+    margin-top: 0;
 }
 
 h3{
     font-family: 'Cormorant', serif;
     font-size: 2em;
-    margin-left: 0.5em;
 }
 
-a{
+a, button{
     font-family: 'Rubik', sans-serif;
     text-decoration: none;
 }
@@ -73,6 +88,15 @@ p, input, label{
     align-items: center;
     width: 100%;
     height: 90vh;
+}
+
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+.scale:hover{
+    transform: scale(1.2);
 }
 
 
@@ -200,26 +224,29 @@ nav a:hover{
 
 #facile{
     margin-bottom: 1em;
-    background-color: orange;
+    background-color: rgb(0, 153, 255);
     cursor: pointer;
     font-size: 2.5em;
     transition: 0.5s;
+    border-radius: 10px;
 }
 
 #inter{
     margin-bottom: 1em;
-    background-color: rgb(255, 115, 0);
+    background-color: rgb(111, 9, 220);
     cursor: pointer;
     font-size: 2.5em;
     transition: 0.5s;
+    border-radius: 10px;
 }
 
 #diff{
     margin-bottom: 1em;
-    background-color: rgb(119, 10, 10);
+    background-color: rgb(127, 3, 149);
     cursor: pointer;
     font-size: 2.5em;
     transition: 0.5s;
+    border-radius: 10px;
 }
 
 #difficult:hover{
@@ -254,4 +281,29 @@ nav a:hover{
 .card-button:hover{
     transform: scale(1.02);
     transition: 0.3s;
+}
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#win{
+    height: fit-content;
+    padding: 3em;
+    border: 3px solid black;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    text-align: center;
+}
+
+#win p{
+    font-size: 2em;
+    color: antiquewhite;
+}
+
+#replay{
+    margin-top: 1em;
+    font-size: 1.5em;
+    border-radius: 10px;
+    background-color: orangered;
+    cursor: pointer;
 }

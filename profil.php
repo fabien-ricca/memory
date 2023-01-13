@@ -1,5 +1,8 @@
 <?php 
     include 'include/User.php';
+    include 'include/Card.php';
+    include 'include/Game.php';
+    include 'include/Score.php';
     session_start(); 
 
     $msgError = "";         //Création de la variable qui contiendra le message d'erreur du mdp
@@ -32,6 +35,32 @@
             <h2>Bienvenue sur votre profil, <?= $user->getLogin() ?></h2>
             <h3>Vos meilleurs scores</h3>
                 <section>
+                    
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nb coups</th>
+                                    <th>Score</th>
+                                    <th>Difficulté</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                    <?php 
+                                        $score = new Score();
+                                        $data = $score->getUserBestScore();
+                                        //var_dump($data); 
+                                        for($i=0; isset($data[$i])>= 10; $i++){
+                                            //echo $data[$i]['difficult'].'<br>';?>
+                                            <tr>
+                                                <td><?= $data[$i]['nbcoups'] ?></td>
+                                                <td><?= $data[$i]['score'] ?></td>
+                                                <td><?= $data[$i]['difficult'] ?></td>
+                                            </tr>
+                                    <?php } ?>  
+                            </tbody>
+                        </table>
+
 
                 </section>
 

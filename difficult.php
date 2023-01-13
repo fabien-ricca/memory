@@ -8,26 +8,23 @@
 
 
     if(isset($_POST['facile'])){
-        $nbrcards = 6;
-        echo $nbrcards;
+        $_SESSION['difficult'] = 6;
         $card = new Card($index = NULL, $idCard = NULL, $state = false);
-        $card->difficulty($nbrcards);
+        $card->difficulty($_SESSION['difficult']);
         header('location: jeu.php');
     }
 
     if(isset($_POST['intermediaire'])){
-        $nbrcards = 12;
-        echo $nbrcards;
+        $_SESSION['difficult'] = 12;
         $card = new Card($index = NULL, $idCard = NULL, $state = false);
-        $card->difficulty($nbrcards);
+        $card->difficulty($_SESSION['difficult']);
         header('location: jeu.php');
     }
 
     if(isset($_POST['difficile'])){
-        $nbrcards = 24;
-        echo $nbrcards;
+        $_SESSION['difficult'] = 24;
         $card = new Card($index = NULL, $idCard = NULL, $state = false);
-        $card->difficulty($nbrcards);
+        $card->difficulty($_SESSION['difficult']);
         header('location: jeu.php');
     }
     
@@ -44,15 +41,15 @@
         <title>Memory</title>
     </head>
 
-    <body class="wall3">
+    <body class="wall4">
         <?php include 'include/header.php' ?>
 
         <main>
             <div  class="flex-column" id="difficult-container">
                 <form method="post" class="flex-column">
-                    <input type="submit" name="facile" value="facile" id="facile"><br>
-                    <input type="submit" name="intermediaire" value="intermediaire" id="inter"><br>
-                    <input type="submit" name="difficile" value="difficile" id="diff"><br>
+                    <input class="scale" type="submit" name="facile" value="facile" id="facile"><br>
+                    <input class="scale" type="submit" name="intermediaire" value="intermediaire" id="inter"><br>
+                    <input class="scale" type="submit" name="difficile" value="difficile" id="diff"><br>
                 </form>
             </div>
         </main>
