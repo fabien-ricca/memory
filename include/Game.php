@@ -28,8 +28,14 @@
         public function secondCard(){
             if($_SESSION['countTry'] == 2){                 // Quand 2 cartes sont retournées
                 if($this->index != $_SESSION['index'] && $this->idcard == $_SESSION['idcard']){     // Si elles sont identiques c'est gagné, on les laisse sur true
-                    $_SESSION['pairs'][] = $this->index;                                      // Et on stocke leurs index dans la liste des paires trouvées
-                    $_SESSION['pairs'][] = $_SESSION['index'];
+                    if(in_array($this->index, $_SESSION['pairs']) && in_array($_SESSION['index'], $_SESSION['pairs'])){     // On vérifie si elles n'ont pas déjà été trouvées
+                        echo"Dedans<br>";
+                    }
+                    else{                                        // Si non, on stocke leurs index dans la liste des paires trouvées
+                        echo"Pas dedans<br>";
+                        $_SESSION['pairs'][] = $this->index;
+                        $_SESSION['pairs'][] = $_SESSION['index'];
+                    }
                 }
             }
             
@@ -71,7 +77,7 @@
             }
         }
 
-        // mETHODE QUI LANCE LE JEU EN FAISANT APPEL AUX AUTRES METHODES
+        // METHODE QUI LANCE LE JEU EN FAISANT APPEL AUX AUTRES METHODES
         public function game($post){
             $_SESSION['nbrcoups']++;                           // On incrémente le score
             $_SESSION['countTry']++;                        // On incrémente le compeur (pour limiter le nombre de cartes retourées)

@@ -47,15 +47,14 @@
                                     <?php 
                                         $score = new Score();
                                         $data = $score->getUserBestScore();
-                                        //var_dump($data); 
-                                        for($i=0; isset($data[$i])>= 10; $i++){
-                                            //echo $data[$i]['difficult'].'<br>';?>
+                                        for($i=0; isset($data[$i]); $i++){
+                                            if($i<10){?>
                                             <tr>
                                                 <td><?= $data[$i]['nbcoups'] ?></td>
                                                 <td><?= $data[$i]['score'] ?></td>
                                                 <td><?= $data[$i]['difficult'] ?></td>
                                             </tr>
-                                    <?php } ?>  
+                                    <?php }} ?>  
                             </tbody>
                         </table>
                 </section>
