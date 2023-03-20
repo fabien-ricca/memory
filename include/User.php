@@ -18,6 +18,8 @@
                 $this->password = $_SESSION['password'];
             }
         }  
+
+
         // METHODE POUR VERIFIER LA FORME DU MDP
         public function checkPassword($password){
             $password_regex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/";       // On créé la regex
@@ -30,6 +32,7 @@
             return $check;      // On return check (true ou false)
             
         }
+
 
         // METHODE POUR INSCRIPTION
         public function register($login, $password){
@@ -57,6 +60,7 @@
             
         }
 
+
         // METHODE POUR CONNEXION
         public function connect($login, $password){
                 $request = $this->connect->prepare("SELECT * FROM utilisateurs WHERE login = ?"); 
@@ -83,6 +87,7 @@
             }
         }
 
+
         // METHODE POUR DECONNEXION
         public function disConnect(){
             session_unset();
@@ -91,12 +96,14 @@
             header("location: index.php");  // On redirige vers la page de connexion
         }
 
+
         // METHODE POUR VERIFIER SI UN USER EST CONNECTE
         public function isConnected(){
             if(isset($_SESSION['login'])){     // Si un attribut 'login' est stocké dans un objet 'user1' existe on return true (si un user est connecté)
                 return true;
             }
         }
+
 
         // METHODE POUR UPDATE LES INFOS DE L'UTILISATEUR
         public function update($login, $oldPassword, $newPassword, $confNewPassword){
@@ -140,9 +147,11 @@
             }
         }
 
+
         public function getMsg(){
             return $this->msg;
         }
+
 
         // METHODE POUR RECUPERER TOUTES LES INFOS DE L'UTILISATEUR CONNECTE
         public function getAllInfos(){
@@ -169,11 +178,13 @@
                     HTML;
         }
 
+
         // METHODE POUR RECUPERER LE LOGIN
         public function getLogin(){
             return $_SESSION['login'];
         }
 
+        
         public function getOtherLogin($iduser){
             $request = $this->connect->prepare("SELECT login FROM utilisateurs WHERE id = ?"); 
             $request->execute([$iduser]);

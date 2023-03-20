@@ -16,7 +16,6 @@
             header('location: win.php');
         }
     }
-    var_dump($_SESSION['pairs']);
 ?>
 
 <!DOCTYPE html>
